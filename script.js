@@ -1,10 +1,18 @@
-// 1. Capturamos el botón del HTML usando su ID
+function formatearMoneda(valor) {
+    return valor.toLocaleString('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+// Capturar el botón del HTML usando su ID
 const ButtonCalcular = document.getElementById('ButtonCalcular');
 
 
-// 2. Le agregamos un evento al botón para escuchar cuando se le hace clic
+// Agregar un evento al botón para escuchar cuando se le hace clic
 ButtonCalcular.addEventListener('click', function() {
-    console.log("¡Hiciste clic en el botón calcular!");
 
     // Datos Generales
     const CostKilo = parseFloat(document.getElementById('costoKiloFilamento').value) || 0;
@@ -41,14 +49,14 @@ ButtonCalcular.addEventListener('click', function() {
     // Precio Venta
     const PrecioVenta = (CostTotal * (1+(margenganancia/100)))
 
-    document.getElementById('CostMaterial').innerText = "$" + CostMaterial.toFixed(2);
-    document.getElementById('CostEnergia').innerText = "$" + CostEnergia.toFixed(2);
-    document.getElementById('RecInversion').innerText = "$" + RecInversion.toFixed(2);
-    document.getElementById('CostManoObra').innerText = "$" + CostManoObra.toFixed(2);
-    document.getElementById('CostMantenimiento').innerText = "$" + CostMantenimiento.toFixed(2);
-    document.getElementById('CostTotal').innerText = "$" + CostTotal.toFixed(2);
-    document.getElementById('Ganancia').innerText = "$" + Ganancia.toFixed(2);
-    document.getElementById('PrecioVenta').innerText = "$" + PrecioVenta.toFixed(2);
+    document.getElementById('CostMaterial').innerText = formatearMoneda(CostMaterial);
+    document.getElementById('CostEnergia').innerText = formatearMoneda(CostEnergia);
+    document.getElementById('RecInversion').innerText = formatearMoneda(RecInversion);
+    document.getElementById('CostManoObra').innerText = formatearMoneda(CostManoObra);
+    document.getElementById('CostMantenimiento').innerText = formatearMoneda(CostMantenimiento);
+    document.getElementById('CostTotal').innerText = formatearMoneda(CostTotal);
+    document.getElementById('Ganancia').innerText = formatearMoneda(Ganancia);
+    document.getElementById('PrecioVenta').innerText = formatearMoneda(PrecioVenta);
 
 
 });
