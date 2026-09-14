@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costos Impresión 3D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+    <header> <h1>Costos Impresión 3D</h1> </header>
+    <form>
+
+        <fieldset>
+            <legend>Datos Generales</legend>
+    
+            <label for="costoKiloFilamento">Costo Filamento ($/kg):</label>
+            <input type="number" id="costoKiloFilamento" placeholder="Ej: 85000">
+
+            <label for="costoEnergia">Costo Energía ($/kWh):</label>
+            <input type="number" id="costoEnergia" placeholder="Ej: 950">
+
+            <label for="costoMaquina">Costo Maquina ($):</label>
+            <input type="number" id="costoMaquina" placeholder="Ej: 3000000">
+
+            <label for="inflacion">Inflacion (%):</label>
+            <input type="number" id="inflacion" placeholder="Ej: 950">
+
+            <label for="mroi">Plazo meses para recueprar inversion maquina (meses):</label>
+            <input type="number" id="mroi" placeholder="Ej: 12">
+
+            <label for="pmax">Potencia electrica maxima maquina (Watts):</label>
+            <input type="number" id="pmax" placeholder="Ej: 750">
+
+            <label for="cmo">Costo mano de obra por hora ($/hora):</label>
+            <input type="number" id="cmo" placeholder="Ej: 750">
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Datos Impresión</legend>
+
+            <label for="filamentousado">Cantidad de filamento necesario(g):</label>
+            <input type="number" id="filamentousado" placeholder="Ej: 80">
+
+            <label for="tiempoimpresion">Tiempo de impresión(h):</label>
+            <input type="number" id="tiempoimpresion" placeholder="Ej: 0.5">
+
+            <label for="horashombre">Horas hombre(h):</label>
+            <input type="number" id="horashombre" placeholder="Ej: 0.7">
+
+            <label for="margenganancia">Margen de ganancia (%):</label>
+            <input type="number" id="margenganancia" placeholder="Ej: 250">
+
+        </fieldset>
+
+        <button type="button" id="ButtonCalcular"> Calcular costos </button>
+        
+    </form>
+
+    <section id="resultados"> 
+
+    <h2>Resumen de Costos</h2>
+    <p>Costo Material: <span id="CostMaterial">$0</span></p>
+    <p>Costo Energia: <span id="CostEnergia">$0</span></p>
+    <p>Cuota Recuperación Inversión: <span id="RecInversion">$0</span></p>
+    <p>Costo Mano de Obra: <span id="CostManoObra">$0</span></p>
+    <p>Costo Mantenimiento atribuible a impresion: <span id="CostMantenimiento">$0</span></p>
+    <p>Costo Total: <span id="CostTotal">$0</span></p>
+    <p>Ganacia: <span id="Ganancia">$0</span></p>
+    <p><strong>Precio Venta:</strong> <strong><span id="PrecioVenta">$0</span></strong></p>
+
+    </section>
+
+    </div>
+    <!-- Conexión al archivo de lógica JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
