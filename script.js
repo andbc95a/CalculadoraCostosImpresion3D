@@ -41,13 +41,13 @@ ButtonCalcular.addEventListener('click', function() {
     // Costo mano de obra
     const CostManoObra = horashombre * cmo;
     // Costo mantenimiento
-    const CostMantenimiento = (costoMaquina * 0.10)/(8760)*tiempoimpresion;
+    const CostMantenimiento = (costoMaquina * 0.10)/(4380)*tiempoimpresion;
     // Costo Total
     const CostTotal = CostMaterial + CostEnergia + RecInversion + CostManoObra + CostMantenimiento;
     // ganancia
-    const Ganancia = (CostTotal * (1+(margenganancia/100)))- CostTotal;
+    const Ganancia = CostTotal * (margenganancia);
     // Precio Venta
-    const PrecioVenta = (CostTotal * (1+(margenganancia/100)))
+    const PrecioVenta = CostTotal + Ganancia;
 
     document.getElementById('CostMaterial').innerText = formatearMoneda(CostMaterial);
     document.getElementById('CostEnergia').innerText = formatearMoneda(CostEnergia);
