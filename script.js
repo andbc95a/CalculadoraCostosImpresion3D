@@ -45,7 +45,7 @@ ButtonCalcular.addEventListener('click', function() {
     // Costo Total
     const CostTotal = CostMaterial + CostEnergia + RecInversion + CostManoObra + CostMantenimiento;
     // ganancia
-    const Ganancia = CostTotal * (margenganancia);
+    const Ganancia = CostTotal * (margenganancia/100);
     // Precio Venta
     const PrecioVenta = CostTotal + Ganancia;
 
